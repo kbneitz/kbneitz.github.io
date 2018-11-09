@@ -1,0 +1,53 @@
+
+	.right { float:right;width:80%; }
+
+  main {
+    margin: 0 auto;
+    max-width: 66em;
+    padding: 1em 0;
+  }
+
+  .grid {
+    /* Grid Fallback */
+    display: flex;
+    flex-wrap: wrap;
+
+    /* Supports Grid */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
+    grid-auto-rows: minmax(150px, auto);
+    grid-gap: 1em;
+  }
+
+
+    .module {
+      /* Demo-Specific Styles */
+      background: #eaeaea;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 275px;
+      width: 400px;
+
+      /* Flex Fallback */
+      margin-left: 5px;
+      margin-right: 5px;
+      flex: 1 1 300px;
+    }
+
+    /* If Grid is supported, remove the margin we set for the fallback */
+    @supports (display: grid) {
+      .module {
+        margin: 0;
+      }
+    }
+
+    h3 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: -5em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
